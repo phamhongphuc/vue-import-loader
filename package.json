@@ -5,16 +5,12 @@
   "main": "./lib/loader.js",
   "scripts": {
     "build": "babel ./src -d ./lib",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean:travis": "rm -rf lib",
+    "test": "exit 0"
   },
   "author": "phamhongphuc",
   "license": "SEE LICENSE IN LICENSE.md",
-  "keywords": [
-    "vue",
-    "webpack",
-    "loader",
-    "module"
-  ],
+  "keywords": ["vue", "webpack", "loader", "module"],
   "dependencies": {
     "cheerio": "^1.0.0-rc.2"
   },
