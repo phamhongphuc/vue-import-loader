@@ -6,7 +6,7 @@ module.exports = function (source) {
         decodeEntities: false
     });
 
-    const regexr = /\.{3}['"](([.\\/\w]*[\\/])?(\w+)\.?\w*)['"]/gm;
+    const regexr = /\.{3}['"](([.\\/\w@$]*[\\/])?(\w+)\.?\w*)['"]/gm;
     const replace = `'ai-$3': () => import('$1')`;
 
     $('script').each(function (index, element) {

@@ -22,7 +22,7 @@ In vue file, this loader create a new way to import your components.
 
 * Install Packge via Github
 
-`npm install phamhongphuc/vue-import-loader#master`
+`npm install phamhongphuc/vue-import-loader`
 
 * Add `vue-import-loader` after `vue-loader` in webpack config
 
