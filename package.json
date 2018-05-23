@@ -1,6 +1,6 @@
 {
   "name": "vue-import-loader",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "A webpack loader for dynamic import, working with .vue file",
   "main": "./lib/loader.js",
   "scripts": {
