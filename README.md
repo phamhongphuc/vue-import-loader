@@ -13,7 +13,7 @@ In vue file, this loader create a new way to import your components.
 ...'path/to/your/component.vue'
 
 // To this
-'ai-component': () => import('path/to/your/component.vue')
+'component-': () => import('path/to/your/component.vue')
 ```
 
 ## Usage
