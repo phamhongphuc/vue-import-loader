@@ -23,12 +23,12 @@ export default function(source) {
 
         element.children[0].data = element.children[0].data.replace(
             regexr,
-            (_, path, name) => {
+            (_, filePath, name) => {
                 const variableName = `_vue_import_loader_${name.replace(
                     /[^\w]/g,
                     "_"
                 )}_`;
-                components.push({ path, variableName });
+                components.push({ filePath, variableName });
 
                 return `'${name}-': ${variableName}`;
             }
@@ -36,7 +36,7 @@ export default function(source) {
 
         element.children[0].data =
             components
-                .map(c => `import ${c.variableName} from ${c.path};\n`)
+                .map(c => `import ${c.variableName} from ${c.filePath};\n`)
                 .join("") + element.children[0].data;
     });
 
