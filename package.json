@@ -17,7 +17,8 @@
     "module"
   ],
   "dependencies": {
-    "cheerio": "^1.0.0-rc.2"
+    "cheerio": "^1.0.0-rc.2",
+    "loader-utils": "^1.1.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.49",

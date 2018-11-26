@@ -1,20 +1,33 @@
+import path from "path";
 import cheerio from "cheerio";
+import { getOptions } from "loader-utils";
 
 export default function(source) {
+    const options = getOptions(this);
+    const resourcePath = path.normalize(this.resourcePath);
+    const allowPath = path.resolve(resourcePath, path.normalize(options.path));
+
+    if (resourcePath.indexOf(allowPath) !== 0) {
+        return source;
+    }
+
     const $ = cheerio.load(source, {
         xmlMode: true,
         decodeEntities: false
     });
 
-    const regexr = /\.{3}['"][.~@$\/\w\-]+\/([\w-]+).vue['"]/gm;
+    const regexr = /\.{3}(['"][.~@$/\w-]+\/([\w-]+).vue['"])/gim;
 
-    $("script").each((index, element) => {
+    $("script").each((_, element) => {
         const components = [];
 
         element.children[0].data = element.children[0].data.replace(
             regexr,
-            (match, path, name) => {
-                const variableName = name.replace(/[^\w]/g, "_");
+            (_, path, name) => {
+                const variableName = `_vue_import_loader_${name.replace(
+                    /[^\w]/g,
+                    "_"
+                )}_`;
                 components.push({ path, variableName });
 
                 return `'${name}-': ${variableName}`;
@@ -23,10 +36,8 @@ export default function(source) {
 
         element.children[0].data =
             components
-                .map(component => `import ${variableName} from '${path}';`)
-                .join("\n") +
-            "\n" +
-            element.children[0].data;
+                .map(c => `import ${c.variableName} from ${c.path};\n`)
+                .join("") + element.children[0].data;
     });
 
     return $.html();
