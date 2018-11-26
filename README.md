@@ -1,6 +1,7 @@
 # Vue Import Loader
 
 [![Travis Build](https://travis-ci.org/phamhongphuc/vue-import-loader.svg?branch=master)](https://travis-ci.org/phamhongphuc/vue-import-loader/builds "Most recent build") [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/phamhongphuc/vue-import-loader.svg)](https://github.com/phamhongphuc/vue-import-loader/issues "Average time to resolve an issue") [![Percentage of issues still open](http://isitmaintained.com/badge/open/phamhongphuc/vue-import-loader.svg)](https://github.com/phamhongphuc/vue-import-loader/issues "Percentage of issues still open")
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fphamhongphuc%2Fvue-import-loader.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fphamhongphuc%2Fvue-import-loader?ref=badge_shield)
 
 > Vue.js component pre-loader for Webpack
 
@@ -51,3 +52,7 @@ module.exports = {
 ```
 
 😎 Happy Coding 😎
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fphamhongphuc%2Fvue-import-loader.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fphamhongphuc%2Fvue-import-loader?ref=badge_large)
