@@ -4,8 +4,10 @@ import { getOptions } from "loader-utils";
 
 export default function(source) {
     const options = getOptions(this);
+    const subAllowPath = path.normalize(options.allowPath);
+    const rootContext = path.normalize(this.rootContext);
     const resourcePath = path.normalize(this.resourcePath);
-    const allowPath = path.resolve(resourcePath, path.normalize(options.path));
+    const allowPath = path.resolve(rootContext, subAllowPath);
 
     if (resourcePath.indexOf(allowPath) !== 0) {
         return source;
