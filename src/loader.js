@@ -17,13 +17,13 @@ export default function(source) {
                 const variableName = name.replace(/[^\w]/g, "_");
                 components.push({ path, variableName });
 
-                return `'${name}-': ${variableName},`;
+                return `'${name}-': ${variableName}`;
             }
         );
 
         element.children[0].data =
             components
-                .map(component => `import ${variableName} from ${path};`)
+                .map(component => `import ${variableName} from '${path}';`)
                 .join("\n") +
             "\n" +
             element.children[0].data;
