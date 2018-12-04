@@ -21,7 +21,7 @@
     "loader-utils": "^1.1.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.1.5",
+    "@babel/cli": "^7.2.0",
     "@babel/core": "^7.1.6",
     "@babel/plugin-proposal-decorators": "^7.1.6",
     "@babel/plugin-proposal-export-namespace-from": "^7.0.0",
